@@ -31,7 +31,7 @@ Desenho de Arquitetura | Maria Eduarda Lima
 MockUp | Antonio Marcelo
 História de Usuário | Carlos Kaynan 
 Diagrama ER no Miro | Humberto 
-
+TDD | Cauê
 
 ###Informações Adicionais
 * Foi definido as telas de login/Cadastro de usuário, Checkin, Checkout;
