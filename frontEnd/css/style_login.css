@@ -1,0 +1,84 @@
+/* Reset de estilos padrão do navegador */
+body, h1, form, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do background verde escuro */
+body {
+    background-color: #0582734d; /* Verde escuro */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Garante que ocupe toda a altura da tela */
+}
+
+/* Estilo do cabeçalho com os botões Home e Registre-se */
+header {
+    text-align: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* Estilo do container de login */
+.login-container {
+    background-color: #0c889ed7; /* azil */
+    width: 200px;
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centraliza o texto dentro do container */
+}
+
+/* Estilo dos campos de formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: rgb(255, 255, 255); /* Cor do texto do rótulo */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+}
+
+/* Estilo do botão de login */
+button[type="submit"] {
+    background-color: #61d461; /* Verde escuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #92e892; /* Verde ainda mais escuro ao passar o mouse */
+}
+
