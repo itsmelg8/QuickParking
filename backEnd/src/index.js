@@ -12,4 +12,4 @@ app.use(express.json());
 
 app.use(rotas);
 
-app.listen(5000);
+app.listen(3000);
