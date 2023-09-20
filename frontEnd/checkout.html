@@ -15,7 +15,7 @@
     </header>
     <div class="checkout-container">
         <h1>Digite a Placa do seu carro</h1>
-        <form>
+        <form id="checkoutForm">
             <div class="form-group">
                 <label for="placa">Placa:</label>
                 <input type="text" id="placa" name="placa" required>
@@ -25,5 +25,35 @@
             </div>
         </form>
     </div>
+    <script>
+        document.getElementById('checkoutForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            const placa = document.getElementById('placa').value;
+            
+            const formData = {
+                placa: placa
+            };
+            
+            fetch('/checkout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = 'home.html';
+                } else {
+                    alert('O checkout falhou. Verifique a placa do veículo e tente novamente.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        });
+    </script>
 </body>
 </html>

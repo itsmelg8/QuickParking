@@ -15,7 +15,7 @@
             <img src="img/parking.jpg">
         </div>
         <div class="form">
-            <form action="#">
+            <form id="cadastroForm">
                 <div class="form-header">
                     <div class="title">
                         <h1>Digite as informações do seu veículo</h1>
@@ -64,11 +64,50 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="home.html">Cadastrar</a> </button>
+                    <button>Cadastrar</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const placa = document.getElementById('firstname').value;
+            const marca = document.getElementById('marca').value;
+            const modelo = document.getElementById('modelo').value;
+            const cor = document.getElementById('cor').value;
+            const tipoVeiculo = document.querySelector('input[name="tipoVeiculo"]:checked').value;
+
+            const formData = {
+                placa: placa,
+                marca: marca,
+                modelo: modelo,
+                cor: cor,
+                tipoVeiculo: tipoVeiculo
+            };
+
+            fetch('/cadastroVeiculo', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = 'home.html';
+                } else {
+                    alert('O cadastro do veículo falhou. Por favor, verifique seus dados e tente novamente.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        });
+    </script>
 </body>
 
 </html>
