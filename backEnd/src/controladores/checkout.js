@@ -29,7 +29,7 @@ const checkout = async (req, res) => {
 
         await pool.query('delete from reserva where placa = $1', [placa]);
 
-        return res.status(204).json(valorCobrado);
+        return res.json((valorCobrado / 100000).toFixed(2));
 
 	} catch (error) {
 		return res.status(500).json('Erro interno do servidor');
